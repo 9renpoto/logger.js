@@ -1,0 +1,38 @@
+{
+  "name": "@9renpoto/logger",
+  "description": "my logger",
+  "version": "0.0.1",
+  "author": "9renpoto",
+  "bugs": {
+    "url": "https://github.com/9renpoto/logger.js/issues"
+  },
+  "dependencies": {
+    "autotrack": "^1.0.3",
+    "raven-js": "^3.7.0"
+  },
+  "devDependencies": {
+    "@9renpoto/tslint-config": "^1.1.0",
+    "npm-run-all": "^3.1.0",
+    "rimraf": "^2.5.4",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.3"
+  },
+  "homepage": "https://github.com/9renpoto/logger.js#readme",
+  "keywords": [
+    "logger"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/9renpoto/logger.js.git"
+  },
+  "scripts": {
+    "build": "npm-run-all clean build:ts",
+    "build:ts": "tsc",
+    "clean": "rimraf dist",
+    "lint:ts": "tslint index.ts",
+    "lint": "npm-run-all -p lint:*",
+    "test": "npm run lint"
+  }
+}
