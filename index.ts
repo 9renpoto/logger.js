@@ -9,7 +9,7 @@ class Logger {
     Raven.captureException(err)
   }
   warn (msg: string): void {
-    Raven.captureMessage(msg, {level: 'warnings'})
+    Raven.captureMessage(msg, {level: 'warning'})
   }
   error (msg: string): void {
     Raven.captureMessage(msg)
