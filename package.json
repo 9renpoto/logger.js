@@ -1,6 +1,6 @@
 {
   "name": "@9renpoto/logger",
-  "description": "my logger",
+  "description": "raven-js wrapper",
   "version": "0.0.1",
   "author": "9renpoto",
   "bugs": {
@@ -31,8 +31,8 @@
     "build": "npm-run-all clean build:ts",
     "build:ts": "tsc",
     "clean": "rimraf dist",
-    "lint:ts": "tslint index.ts",
     "lint": "npm-run-all -p lint:*",
+    "lint:ts": "tslint index.ts",
     "test": "npm run lint"
   }
 }

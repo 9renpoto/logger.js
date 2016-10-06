@@ -1,7 +1,5 @@
 # @9renpoto/logger
 
-study frontend
-
 [![codecov][codedov-image]][codecov-url] [![Travis Build Status][travis-image]][travis-url] [![Dependency Status][david-dm-image]][david-dm-url] [![devDependency Status][dev-david-dm-image]][dev-david-dm-url]
 
 ## LICENSE
