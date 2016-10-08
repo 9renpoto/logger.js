@@ -1,7 +1,7 @@
 {
   "name": "@9renpoto/logger",
   "description": "raven-js wrapper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "9renpoto",
   "bugs": {
     "url": "https://github.com/9renpoto/logger.js/issues"
