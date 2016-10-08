@@ -1,0 +1,4 @@
+{
+  "extends": ["@9renpoto/eslint-config"],
+  "parser": "typescript-eslint-parser"
+}
