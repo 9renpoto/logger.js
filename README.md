@@ -1,11 +1,13 @@
 # @9renpoto/logger
 
-[![codecov][codedov-image]][codecov-url] [![Travis Build Status][travis-image]][travis-url] [![Dependency Status][david-dm-image]][david-dm-url] [![devDependency Status][dev-david-dm-image]][dev-david-dm-url]
+[![npm version][npm-v-img]][npm-v-url] [![codecov][codedov-image]][codecov-url] [![Travis Build Status][travis-image]][travis-url] [![Dependency Status][david-dm-image]][david-dm-url] [![devDependency Status][dev-david-dm-image]][dev-david-dm-url]
 
 ## LICENSE
 
 MIT
 
+[npm-v-img]: https://badge.fury.io/js/%409renpoto%2Flogger.svg
+[npm-v-url]: https://badge.fury.io/js/%409renpoto%2Flogger
 [codecov-url]: https://codecov.io/gh/9renpoto/logger.js
 [codedov-image]: https://codecov.io/gh/9renpoto/logger.js/branch/master/graph/badge.svg
 [david-dm-image]: https://david-dm.org/9renpoto/logger.js.svg
