@@ -7,7 +7,7 @@
     "url": "https://github.com/9renpoto/logger.js/issues"
   },
   "dependencies": {
-    "autotrack": "^1.0.3",
+    "autotrack": "^2.0.0",
     "raven-js": "^3.7.0"
   },
   "devDependencies": {
