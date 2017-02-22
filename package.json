@@ -1,31 +1,43 @@
 {
   "name": "@9renpoto/logger",
   "description": "raven-js wrapper",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "author": "9renpoto",
   "bugs": {
     "url": "https://github.com/9renpoto/logger.js/issues"
   },
   "dependencies": {
-    "autotrack": "^2.0.0",
     "raven-js": "^3.7.0"
   },
   "devDependencies": {
     "@9renpoto/eslint-config": "^1.4.0",
     "@9renpoto/tslint-config": "^2.0.0",
+    "@types/faker": "^3.1.32",
+    "@types/mocha": "^2.2.39",
+    "@types/power-assert": "^1.4.29",
     "eslint": "^3.9.1",
+    "faker": "^4.1.0",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^3.2.0",
     "npm-run-all": "^4.0.0",
+    "power-assert": "^1.4.2",
     "rimraf": "^2.5.4",
     "tslint": "^4.0.2",
     "typescript": "^2.2.1",
     "typescript-eslint-parser": "^2.0.0"
   },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "dist/lib/"
+  ],
   "homepage": "https://github.com/9renpoto/logger.js#readme",
   "keywords": [
     "logger"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/9renpoto/logger.js.git"
@@ -35,8 +47,11 @@
     "build:ts": "tsc",
     "clean": "rimraf dist",
     "lint": "npm-run-all -p lint:*",
+    "lint:es": "eslint . --cache",
     "lint:ts": "tslint src/index.ts",
-    "lint:es": "eslint .",
-    "test": "npm run lint"
+    "pretest:mocha": "npm run build",
+    "test": "npm-run-all -p test:*",
+    "test:lint": "npm run lint",
+    "test:mocha": "cover _mocha -- dist/test/*.test.js"
   }
 }

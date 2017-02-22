@@ -4,9 +4,6 @@ node_js:
 - stable
 - '6'
 - '5'
-cache:
-  directories:
-  - node_modules
 notifications:
   email: false
   slack:
