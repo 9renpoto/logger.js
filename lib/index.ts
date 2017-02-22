@@ -1,3 +1,4 @@
+
 class Logger {
   private Raven: any
   constructor(r: any) {
@@ -6,12 +7,22 @@ class Logger {
       this.Raven = r
     }
   }
+  capture (msg: string, options = { level: 'error'}): void {
+    try {
+      if (this.Raven.isSetup()) {
+        this.Raven.captureMessage(msg, {level: 'warning'})
+      }
+    } catch (err) {
+      console.warn(err)
+    }
+  }
   warn (msg: string): void {
-    this.Raven.captureMessage(msg, {level: 'warning'})
+    this.capture(msg, {level: 'warning'})
   }
   error (msg: string): void {
-    this.Raven.captureMessage(msg)
+    this.capture(msg)
   }
 }
 
 export { Logger }
+export default new Logger(null)
