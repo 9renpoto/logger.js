@@ -16,6 +16,7 @@
     "@types/mocha": "^2.2.39",
     "@types/power-assert": "^1.4.29",
     "codecov": "^2.0.1",
+    "cross-env": "^3.1.4",
     "eslint": "^3.9.1",
     "faker": "^4.1.0",
     "intelli-espower-loader": "^1.0.1",
@@ -27,7 +28,8 @@
     "rimraf": "^2.5.4",
     "tslint": "^5.0.0",
     "typescript": "^2.2.1",
-    "typescript-eslint-parser": "^2.0.0"
+    "typescript-eslint-parser": "^2.0.0",
+    "zuul": "^3.11.1"
   },
   "directories": {
     "test": "test"
@@ -60,6 +62,8 @@
     "pretest:mocha": "npm run build",
     "test": "npm-run-all -p test:*",
     "test:lint": "npm run lint",
-    "test:mocha": "istanbul cover _mocha -- dist/test/*.test.js"
+    "test:mocha": "istanbul cover _mocha -- dist/test/*.test.js",
+    "zuul:local": "zuul --local 8080 --ui mocha-bdd -- test/*-test.js",
+    "zuul:sauce": "zuul -- test/*-test.js"
   }
 }
