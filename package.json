@@ -60,10 +60,10 @@
     "lint:ts": "tslint src/index.ts",
     "posttest": "npm run cover",
     "pretest:mocha": "npm run build",
+    "start": "npm run clean && tsc -w && zuul --local 8080 --ui mocha-bdd -- dist/test/*.test.js",
     "test": "npm-run-all -p test:*",
     "test:lint": "npm run lint",
     "test:mocha": "istanbul cover _mocha -- dist/test/*.test.js",
-    "zuul:local": "zuul --local 8080 --ui mocha-bdd -- test/*-test.js",
-    "zuul:sauce": "zuul -- test/*-test.js"
+    "zuul:sauce": "zuul -- dist/test/*.test.js"
   }
 }
