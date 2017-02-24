@@ -9,8 +9,8 @@ class Logger {
   }
   capture (msg: string, options = { level: 'error'}): void {
     try {
-      if (this.Raven.isSetup()) {
-        this.Raven.captureMessage(msg, {level: 'warning'})
+      if (this.Raven.isSetup && this.Raven.isSetup()) {
+        this.Raven.captureMessage(msg, options)
       }
     } catch (err) {
       console.warn(err)

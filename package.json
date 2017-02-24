@@ -1,6 +1,6 @@
 {
   "name": "@9renpoto/logger",
-  "description": "raven-js wrapper",
+  "description": "logger simple inspired by console",
   "version": "0.1.0",
   "author": "9renpoto",
   "bugs": {
@@ -21,6 +21,7 @@
     "mocha": "^3.2.0",
     "npm-run-all": "^4.0.0",
     "power-assert": "^1.4.2",
+    "remap-istanbul": "^0.9.1",
     "rimraf": "^2.5.4",
     "tslint": "^4.0.2",
     "typescript": "^2.2.1",
@@ -45,13 +46,18 @@
   "scripts": {
     "build": "npm-run-all clean build:ts",
     "build:ts": "tsc",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist coverage",
+    "codecov": "npm run cover && codecov -f coverage/coverage-remapped.json",
+    "cover": "npm-run-all -p cover:*",
+    "cover:html": "cd coverage && remap-istanbul -i coverage.json -o html-report -t html",
+    "cover:json": "cd coverage && cat coverage.json | remap-istanbul -o coverage-remapped.json",
     "lint": "npm-run-all -p lint:*",
     "lint:es": "eslint . --cache",
     "lint:ts": "tslint src/index.ts",
+    "posttest": "npm run cover",
     "pretest:mocha": "npm run build",
     "test": "npm-run-all -p test:*",
     "test:lint": "npm run lint",
-    "test:mocha": "cover _mocha -- dist/test/*.test.js"
+    "test:mocha": "istanbul cover _mocha -- dist/test/*.test.js"
   }
 }
