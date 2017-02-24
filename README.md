@@ -1,8 +1,6 @@
 # @9renpoto/logger
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/9renpoto/logger.js.svg)](https://greenkeeper.io/)
-
-[![npm version][npm-v-img]][npm-v-url] [![codecov][codedov-image]][codecov-url] [![Travis Build Status][travis-image]][travis-url] [![Dependency Status][david-dm-image]][david-dm-url] [![devDependency Status][dev-david-dm-image]][dev-david-dm-url]
+[![npm version][npm-v-img]][npm-v-url] [![codecov][codedov-image]][codecov-url] [![Travis Build Status][travis-image]][travis-url] [![Dependency Status][david-dm-image]][david-dm-url] [![devDependency Status][dev-david-dm-image]][dev-david-dm-url] [![Greenkeeper badge](https://badges.greenkeeper.io/9renpoto/logger.js.svg)](https://greenkeeper.io/)
 
 ## LICENSE
 
