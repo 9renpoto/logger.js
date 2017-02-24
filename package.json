@@ -1,31 +1,46 @@
 {
   "name": "@9renpoto/logger",
-  "description": "raven-js wrapper",
-  "version": "0.0.3",
+  "description": "logger simple inspired by console",
+  "version": "0.1.0",
   "author": "9renpoto",
   "bugs": {
     "url": "https://github.com/9renpoto/logger.js/issues"
   },
   "dependencies": {
-    "autotrack": "^2.0.0",
     "raven-js": "^3.7.0"
   },
   "devDependencies": {
     "@9renpoto/eslint-config": "^1.4.0",
     "@9renpoto/tslint-config": "^2.0.0",
+    "@types/faker": "^3.1.32",
+    "@types/mocha": "^2.2.39",
+    "@types/power-assert": "^1.4.29",
+    "codecov": "^1.0.1",
     "eslint": "^3.9.1",
+    "faker": "^4.1.0",
+    "intelli-espower-loader": "^1.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
     "npm-run-all": "^4.0.0",
+    "power-assert": "^1.4.2",
+    "remap-istanbul": "^0.9.1",
     "rimraf": "^2.5.4",
     "tslint": "^4.0.2",
     "typescript": "^2.2.1",
     "typescript-eslint-parser": "^2.0.0"
   },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "dist/lib/"
+  ],
   "homepage": "https://github.com/9renpoto/logger.js#readme",
   "keywords": [
     "logger"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/9renpoto/logger.js.git"
@@ -33,10 +48,18 @@
   "scripts": {
     "build": "npm-run-all clean build:ts",
     "build:ts": "tsc",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist coverage",
+    "codecov": "npm run cover && codecov -f coverage/coverage-remapped.json -t $CODECOV_TOKEN",
+    "cover": "npm-run-all -p cover:*",
+    "cover:html": "cd coverage && remap-istanbul -i coverage.json -o html-report -t html",
+    "cover:json": "cd coverage && cat coverage.json | remap-istanbul -o coverage-remapped.json",
     "lint": "npm-run-all -p lint:*",
+    "lint:es": "eslint . --cache",
     "lint:ts": "tslint src/index.ts",
-    "lint:es": "eslint .",
-    "test": "npm run lint"
+    "posttest": "npm run cover",
+    "pretest:mocha": "npm run build",
+    "test": "npm-run-all -p test:*",
+    "test:lint": "npm run lint",
+    "test:mocha": "istanbul cover _mocha -- dist/test/*.test.js"
   }
 }
