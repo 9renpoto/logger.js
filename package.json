@@ -7,7 +7,7 @@
     "url": "https://github.com/9renpoto/logger.js/issues"
   },
   "dependencies": {
-    "raven-js": "^3.7.0"
+    "raven-js": "^3.13.1"
   },
   "devDependencies": {
     "@9renpoto/eslint-config": "^1.4.0",
