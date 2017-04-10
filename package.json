@@ -10,7 +10,7 @@
     "raven-js": "^3.13.1"
   },
   "devDependencies": {
-    "@9renpoto/eslint-config": "^1.4.0",
+    "@9renpoto/eslint-config": "^2.0.0",
     "@9renpoto/tslint-config": "^3.0.0",
     "@types/faker": "^4.1.0",
     "@types/mocha": "^2.2.39",
