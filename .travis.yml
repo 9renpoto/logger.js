@@ -7,6 +7,16 @@ cache:
   yarn: true
   directories:
     - node_modules
+env:
+  matrix:
+  - CI_MODE=zuul
+  - CI_MODE=mocha
+  - CI_MODE=lint
+matrix:
+  allow_failures:
+  - env: CI_MODE=zool
+script:
+- npm run ci:$CI_MODE
 after_success:
 - npm run codecov
 notifications:
