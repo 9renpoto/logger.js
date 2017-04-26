@@ -50,6 +50,9 @@
   "scripts": {
     "build": "npm-run-all clean build:ts",
     "build:ts": "tsc",
+    "ci:lint": "npm run test:lint",
+    "ci:mocha": "npm run test:mocha",
+    "ci:zuul": "zuul -- dist/test/*.test.js",
     "clean": "rimraf dist coverage",
     "codecov": "npm run cover && codecov -f coverage/coverage-remapped.json -t $CODECOV_TOKEN",
     "cover": "npm-run-all -p cover:*",
@@ -63,7 +66,6 @@
     "start": "npm run clean && tsc -w && zuul --local 8080 --ui mocha-bdd -- dist/test/*.test.js",
     "test": "npm-run-all -p test:*",
     "test:lint": "npm run lint",
-    "test:mocha": "istanbul cover _mocha -- dist/test/*.test.js",
-    "zuul:sauce": "zuul -- dist/test/*.test.js"
+    "test:mocha": "istanbul cover _mocha -- dist/test/*.test.js"
   }
 }
