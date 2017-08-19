@@ -27,7 +27,7 @@
     "rimraf": "^2.5.4",
     "tslint": "^5.0.0",
     "typescript": "^2.2.1",
-    "typescript-eslint-parser": "^4.0.0"
+    "typescript-eslint-parser": "^6.0.1"
   },
   "directories": {
     "test": "test"
